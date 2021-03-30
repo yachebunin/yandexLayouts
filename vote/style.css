@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #261C00;
+  font-family: 'Roboto';
+}
+
+#vote_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#title {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+#description {
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #BFBFBF;
+}
+
+#vote_list {
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.vote_item {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 142px;
+  max-width: 104px;
+  border-radius: 6px;
+}
+
+.vote_item:hover {
+  cursor: pointer;
+  background: linear-gradient(180deg, rgba(244, 244, 244, 0.9) 0.82%, #E9E9E9 100%, rgba(234, 234, 234, 0) 100%);
+  box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.5), inset 0px 0px 20px rgba(207, 207, 207, 0.5);
+}
+
+.vote_item:active {
+  background: linear-gradient(180deg, #FFF2D1 0.82%, #FFD66C 100%);
+  box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.5), inset 0px 0px 20px rgba(255, 176, 57, 0.8);
+}
+
+.vote_item_image > img {
+  border-radius: 100%;
+}
+
+.vote_item_name {
+  max-width: 96px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+#vote_button_prev {
+  min-width: 70px;
+  min-height: 70px;
+  margin: 0px auto;
+  transform: rotate(180deg);
+  margin-bottom: 28px;
+  background: center url(/images/button-light.svg) no-repeat;
+}
+
+#vote_button_next {
+  min-width: 70px;
+  min-height: 70px;
+  margin: 0px auto;
+  align-self: start;
+  margin-top: 28px;
+  background: center url(/images/button-light.svg) no-repeat;
+}
+
+#vote_button_prev:hover, #vote_button_next:hover {
+  cursor: pointer;
+  background: center url(/images/button-hover-light.svg) no-repeat;
+}
+
+.choose::before {
+  position: absolute;
+  left: 50%;
+  top: -3px;
+  transform: translateX(-50%);
+  content: url('/images/1x/good.png');
+}
+
+@media all and (min-width: 376px) and (max-width: 511px) {
+  #vote_wrapper {
+    text-align: left;
+  }
+
+  #title {
+    max-width: 300px;
+    align-self: flex-start;
+  }
+  
+  #description {
+    max-width: 300px;
+    align-self: flex-start;
+    margin-bottom: 23px;
+  }
+
+  #vote_list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+  }
+
+  #vote_list > div > div {
+    width: 104px;
+  }
+
+  #vote_button_prev {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    align-self: center;
+  }
+
+  #vote_button_next {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    align-self: center;
+  }
+
+  #vote_button_prev:hover, #vote_button_next:hover {
+    cursor: pointer;
+    background: center url(/images/button-light.svg) no-repeat;
+  }
+}

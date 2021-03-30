@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vote</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="vote_wrapper">
+      <div id="title">Самый 🔎 внимательный разработчик</div>
+      <div id="description">Спринт № 213</div>
+      <div id="vote_list">
+        <div class="vote_item">
+          <div class="vote_item_image">
+            <img src="images/1x/1.jpg" alt="person" />
+          </div>
+          <div class="vote_item_name">Евгений Дементьев</div>
+        </div>
+
+        <div>
+          <div class="vote_item">
+            <div class="vote_item_image">
+              <img src="images/1x/4.jpg" alt="person" />
+            </div>
+            <div class="vote_item_name choose">Вадим Пацев</div>
+          </div>
+
+          <div class="vote_item">
+            <div class="vote_item_image">
+              <img src="images/1x/11.jpg" alt="person" />
+            </div>
+            <div class="vote_item_name">Юрий Фролов</div>
+          </div>
+        </div>
+
+        <div>
+          <div id="vote_button_prev"></div>
+          <div id="vote_button_next"></div>
+        </div>
+
+        <div>
+          <div class="vote_item">
+            <div class="vote_item_image">
+              <img src="images/1x/10.jpg" alt="person" />
+            </div>
+            <div class="vote_item_name">Яна Берникова</div>
+          </div>
+
+          <div class="vote_item">
+            <div class="vote_item_image">
+              <img src="images/1x/2.jpg" alt="person" />
+            </div>
+            <div class="vote_item_name">Александр Шлейко</div>
+          </div>
+        </div>
+
+        <div class="vote_item">
+          <div class="vote_item_image">
+            <img src="images/1x/12.jpg" alt="person" />
+          </div>
+          <div class="vote_item_name">Алексей Ярошевич</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let vote_list;
+
+      function changeVote_list() {
+        document.getElementById("vote_list").innerHTML = `
+      <div>
+          <div class="vote_item">
+          <div class="vote_item_image">
+            <img src="images/1x/1.jpg" alt="person" />
+          </div>
+          <div class="vote_item_name">Евгений Дементьев</div>
+        </div>
+
+        <div class="vote_item">
+          <div class="vote_item_image">
+            <img src="images/1x/4.jpg" alt="person" />
+          </div>
+          <div class="vote_item_name choose">Вадим Пацев</div>
+        </div>
+
+        <div class="vote_item">
+            <div class="vote_item_image">
+              <img src="images/1x/12.jpg" alt="person" />
+            </div>
+            <div class="vote_item_name">Тестовый</div>
+        </div>
+      </div>
+
+        <div>
+          <div id="vote_button_prev"></div>
+
+          <div class="vote_item">
+            <div class="vote_item_image">
+              <img src="images/1x/10.jpg" alt="person" />
+            </div>
+            <div class="vote_item_name">Яна Берникова</div>
+          </div>
+
+          <div class="vote_item">
+            <div class="vote_item_image">
+              <img src="images/1x/2.jpg" alt="person" />
+            </div>
+            <div class="vote_item_name">Александр Шлейко</div>
+          </div>
+
+          <div id="vote_button_next"></div>  
+        </div>
+
+        <div>
+          <div class="vote_item">
+            <div class="vote_item_image">
+              <img src="images/1x/12.jpg" alt="person" />
+            </div>
+            <div class="vote_item_name">Алексей Ярошевич</div>
+          </div>
+
+          <div class="vote_item">
+            <div class="vote_item_image">
+              <img src="images/1x/11.jpg" alt="person" />
+            </div>
+            <div class="vote_item_name">Юрий Фролов</div>
+          </div>  
+
+          <div class="vote_item">
+            <div class="vote_item_image">
+              <img src="images/1x/12.jpg" alt="person" />
+            </div>
+            <div class="vote_item_name">Тестовый</div>
+          </div>  
+        </div>
+          `;
+      }
+
+      window.onload = function () {
+        vote_list = document.getElementById("vote_list").innerHTML;
+
+        if (document.documentElement.clientWidth <= 511) {
+          changeVote_list();
+        }
+      };
+      window.onresize = function () {
+        if (document.querySelectorAll(".test").length != 0) {
+          for (let item of document.querySelectorAll(".test")) {
+            item.remove();
+          }
+        }
+
+        if (document.documentElement.clientWidth <= 511) {
+          changeVote_list();
+        } else {
+          document.getElementById("vote_list").innerHTML = vote_list;
+        }
+      };
+    </script>
+  </body>
+</html>

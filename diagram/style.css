@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.swap{
+  box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.5), inset 0px 0px 20px rgba(255, 176, 57, 0.4)
+}
+
+body {
+  color: #261C00;
+  font-family: 'Roboto';
+}
+
+#title {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+#description {
+  margin-bottom: 29px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #BFBFBF;
+}
+
+#diagram_wrapper {
+  text-align: center;
+}
+
+#diagram_list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#diagram_item_image {
+  position: relative;
+  margin-right: 40px;
+}
+
+#diagram_item_image_text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#commits_value_all {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+#commits_value_new {
+  font-weight: 500;
+  font-size: 16px;
+  color: #BFBFBF;
+}
+
+#diagram_item_list {
+  display: flex;
+  flex-direction: column;
+}
+
+.values_list_item {
+  display: grid;
+  grid-template: auto / 16px 230px 27px 31px;
+  justify-items: start;
+  align-items: center;
+  width: 304px;
+  padding-bottom: 16px;
+}
+
+.values_list_item:not(:last-child) {
+  border-bottom: 2px solid #918F8A;
+  margin-bottom: 16px;
+}
+
+.item_circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+}
+
+#item_circle_1 {
+  background: radial-gradient(49.84% 49.84% at 49.84% 50.16%, rgba(255, 184, 0, 0.56) 81.25%, rgba(255, 239, 153, 0.32) 100%);
+  box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.5), inset 0px 0px 20px rgba(255, 176, 57, 0.9);
+  transform: matrix(1, 0, 0, -1, 0, 0);
+}
+
+#item_circle_2 {
+  background: radial-gradient(49.84% 49.84% at 49.84% 50.16%, rgba(255, 184, 0, 0.24) 81.25%, rgba(255, 239, 153, 0.12) 100%);
+  box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.5), inset 0px 0px 20px rgba(255, 176, 57, 0.4);
+  transform: matrix(1, 0, 0, -1, 0, 0);
+}
+
+#item_circle_3 {
+  background: radial-gradient(49.84% 49.84% at 49.84% 50.16%, rgba(166, 166, 166, 0.1725) 82.81%, rgba(203, 203, 203, 0.05) 92.19%);
+  box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.5), inset 0px 0px 20px rgba(105, 105, 105, 0.2);
+  transform: matrix(1, 0, 0, -1, 0, 0);
+}
+
+#item_circle_4 {
+  background: radial-gradient(49.84% 49.84% at 49.84% 50.16%, rgba(191, 191, 191, 0.345) 82.81%, rgba(228, 228, 228, 0.1) 92.19%);
+  box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.5), inset 0px 0px 20px rgba(131, 131, 131, 0.6);
+  transform: matrix(1, 0, 0, -1, 0, 0);
+}
+
+.item_info {
+  padding-left: 10px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.item_new_commits, .item_all_commits {
+  font-weight: 500;
+  font-size: 16px;
+  color: #918F8A;
+}
+
+.item_new_commits {
+  justify-self: end;
+}
+
+.item_all_commits {
+  justify-self: end;
+}
+
+
+@media all and (min-width: 320px) and (max-width: 600px) {
+  #diagram_wrapper {
+    text-align: left;
+  }
+
+  #diagram_list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  #diagram_item_image {
+    position: relative;
+    margin-bottom: 32px;
+    margin-right: 0px;
+  }
+}

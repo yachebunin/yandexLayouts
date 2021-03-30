@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>leaders</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="leaders_wrapper">
+      <div id="title">Больше всего коммитов</div>
+      <div id="description">Спринт № 213</div>
+      <div id="leaders_list">
+        <div class="leaders_item leader_active">
+          <div class="leaders_item_info">
+            <div class="leaders_item_image">
+              <img src="images/1x/8.jpg" alt="leader" />
+            </div>
+            <div class="leaders_item_name">Александр Иванков</div>
+            <div class="leaders_item_point">19</div>
+          </div>
+          <div class="leaders_item_place">5</div>
+        </div>
+
+        <div class="leaders_item">
+          <div class="leaders_item_info">
+            <div class="leaders_item_image">
+              <img src="images/1x/7.jpg" alt="leader" />
+            </div>
+            <div class="leaders_item_name">Дмитрий Андриянов</div>
+            <div class="leaders_item_point">22</div>
+          </div>
+          <div class="leaders_item_place">3</div>
+        </div>
+
+        <div class="leaders_item">
+          <div class="leaders_item_info">
+            <div class="leaders_item_image">
+              <img src="images/1x/3.jpg" alt="leader" />
+            </div>
+            <div class="leaders_item_name">Дарья Ковалева</div>
+            <div class="leaders_item_point">32</div>
+          </div>
+          <div class="leaders_item_place">1</div>
+        </div>
+
+        <div class="leaders_item">
+          <div class="leaders_item_info">
+            <div class="leaders_item_image">
+              <img src="images/1x/9.jpg" alt="leader" />
+            </div>
+            <div class="leaders_item_name">Сергей Бережной</div>
+            <div class="leaders_item_point">27</div>
+          </div>
+          <div class="leaders_item_place">2</div>
+        </div>
+
+        <div class="leaders_item">
+          <div class="leaders_item_info">
+            <div class="leaders_item_image">
+              <img src="images/1x/6.jpg" alt="leader" />
+            </div>
+            <div class="leaders_item_name">Андрей Мокроусов</div>
+            <div class="leaders_item_point">20</div>
+          </div>
+          <div class="leaders_item_place">4</div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+      body {
+        color: #261c00;
+        font-family: "Roboto";
+      }
+
+      #leaders_wrapper {
+        text-align: center;
+        transform: translateX(-8px);
+      }
+
+      #title {
+        font-size: 30px;
+        font-weight: 700;
+      }
+
+      #description {
+        margin-bottom: 48px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #bfbfbf;
+      }
+
+      #leaders_list {
+        display: flex;
+        justify-content: center;
+      }
+
+      .leaders_item {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        justify-content: flex-end;
+        max-width: 104px;
+      }
+
+      .leaders_item_image {
+        position: relative;
+      }
+
+      .leaders_item_image > img {
+        margin-bottom: 6px;
+        border-radius: 100%;
+      }
+
+      .leaders_item_name {
+        margin-bottom: 4px;
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      .leaders_item_point {
+        margin-bottom: 16px;
+        font-size: 14px;
+        color: #bfbfbf;
+      }
+
+      .leaders_item_place {
+        min-width: 120px;
+        padding-top: 18px;
+        font-size: 30px;
+        font-weight: 700;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        background: linear-gradient(
+          180deg,
+          rgba(244, 244, 244, 0.9) 0.82%,
+          #e9e9e9 100%,
+          rgba(234, 234, 234, 0) 100%
+        );
+        box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.5),
+          inset 0px 0px 20px rgba(207, 207, 207, 0.5);
+      }
+
+      #leaders_list > .leaders_item:nth-child(3) .leaders_item_image::before {
+        position: absolute;
+        content: "👑";
+        left: 50%;
+        top: -20px;
+        transform: translateX(-50%);
+        z-index: 3;
+        font-size: 32px;
+        line-height: 32px;
+        font-weight: 700;
+      }
+
+      .leader_active .leaders_item_image {
+        position: relative;
+      }
+
+      .leader_active .leaders_item_image::before {
+        position: absolute;
+        content: "👍";
+        left: 50%;
+        top: -24px;
+        transform: translateX(-50%);
+        z-index: 3;
+        font-size: 32px;
+        line-height: 32px;
+        font-weight: 700;
+      }
+
+      #leaders_list {
+        position: relative;
+      }
+
+      #leaders_list > .leaders_item:first-child .leaders_item_place,
+      #leaders_list > .leaders_item:last-child .leaders_item_place {
+        min-height: 68px;
+        z-index: 1;
+      }
+
+      #leaders_list > .leaders_item:nth-child(2) .leaders_item_place,
+      #leaders_list > .leaders_item:nth-child(4) .leaders_item_place {
+        min-height: 88px;
+        z-index: 2;
+      }
+
+      #leaders_list > .leaders_item:nth-child(3) .leaders_item_place {
+        z-index: 3;
+        min-height: 108px;
+        background: linear-gradient(180deg, #fff2d1 0.82%, #ffd66c 100%);
+        box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.5),
+          inset 0px 0px 20px rgba(255, 176, 57, 0.8);
+      }
+
+      #leaders_list > .leaders_item:nth-child(3) > .leaders_item_info {
+        transform: translateX(8px);
+      }
+
+      #leaders_list > .leaders_item:nth-child(4) > .leaders_item_info {
+        transform: translateX(15px);
+      }
+
+      #leaders_list > .leaders_item:nth-child(5) > .leaders_item_info {
+        transform: translateX(11px);
+      }
+
+      @media all and (min-width: 320px) and (max-width: 375px) {
+        #leaders_wrapper {
+          transform: translateX(-8px);
+        }
+
+        #title {
+          font-size: 20px;
+          font-weight: 700;
+          max-width: 200px;
+          padding-left: 24px;
+          text-align: left;
+        }
+
+        #description {
+          font-size: 12px;
+          margin-bottom: 91px;
+          padding-left: 24px;
+          text-align: left;
+        }
+
+        .leaders_item_name {
+          font-size: 14px;
+          font-weight: 500;
+        }
+
+        .leaders_item_point {
+          font-size: 12px;
+        }
+
+        .leaders_item {
+          max-width: 92px;
+        }
+
+        .leaders_item_place {
+          min-width: 108px;
+        }
+
+        .leaders_item_place {
+          font-size: 20px;
+        }
+
+        #leaders_list > .leaders_item:nth-child(3)::before {
+          left: 40px;
+          top: -25px;
+          font-size: 22px;
+        }
+
+        #leaders_list > .leaders_item:first-child,
+        #leaders_list > .leaders_item:last-child {
+          display: none;
+        }
+
+        #leaders_list > .leaders_item:nth-child(2) .leaders_item_place {
+          min-height: 225px;
+        }
+
+        #leaders_list > .leaders_item:nth-child(3) .leaders_item_place {
+          min-height: 325px;
+        }
+
+        #leaders_list > .leaders_item:nth-child(4) .leaders_item_place {
+          min-height: 275px;
+        }
+
+        .leader_active {
+          display: block !important;
+          position: absolute;
+          left: 50%;
+          top: 100%;
+          transform: translate(-50%, -100%);
+          z-index: 5;
+        }
+
+        .leader_active .leaders_item_info {
+          transform: translateX(7px);
+        }
+      }
+
+      @media all and (min-width: 376px) and (max-width: 511px) {
+        #leaders_wrapper {
+          transform: translateX(-8px);
+        }
+
+        #title {
+          max-width: 300px;
+          padding-left: 24px;
+          text-align: left;
+        }
+
+        #description {
+          margin-bottom: 91px;
+          padding-left: 24px;
+          text-align: left;
+        }
+
+        #leaders_list > .leaders_item:first-child,
+        #leaders_list > .leaders_item:last-child {
+          display: none;
+        }
+
+        #leaders_list > .leaders_item:nth-child(2) .leaders_item_place {
+          min-height: 225px;
+        }
+
+        #leaders_list > .leaders_item:nth-child(3) .leaders_item_place {
+          min-height: 325px;
+        }
+
+        #leaders_list > .leaders_item:nth-child(4) .leaders_item_place {
+          min-height: 275px;
+        }
+
+        .leader_active {
+          display: block !important;
+          position: absolute;
+          left: 50%;
+          top: 100%;
+          transform: translate(-50%, -100%);
+          z-index: 5;
+        }
+
+        .leader_active .leaders_item_info {
+          transform: translateX(7px);
+        }
+      }
+
+      @media all and (min-width: 512px) and (max-width: 568px) {
+        #leaders_wrapper {
+          text-align: center;
+          transform: translateX(-8px);
+        }
+
+        #title {
+          max-width: 300px;
+          padding-left: 24px;
+          text-align: left;
+        }
+
+        #description {
+          margin-bottom: 91px;
+          padding-left: 24px;
+          text-align: left;
+        }
+
+        .leaders_item {
+          max-width: 150px;
+        }
+
+        .leaders_item_place {
+          min-width: 166px;
+        }
+
+        #leaders_list > .leaders_item:nth-child(3)::before {
+          left: 63px;
+          top: -30px;
+        }
+
+        #leaders_list > .leaders_item:first-child,
+        #leaders_list > .leaders_item:last-child {
+          display: none;
+        }
+
+        #leaders_list > .leaders_item:nth-child(2) .leaders_item_place {
+          min-height: 225px;
+        }
+
+        #leaders_list > .leaders_item:nth-child(3) .leaders_item_place {
+          min-height: 325px;
+        }
+
+        #leaders_list > .leaders_item:nth-child(4) .leaders_item_place {
+          min-height: 275px;
+        }
+
+        .leader_active {
+          display: block !important;
+          position: absolute;
+          left: 50%;
+          top: 100%;
+          transform: translate(-50%, -100%);
+          z-index: 5;
+        }
+
+        .leader_active .leaders_item_info {
+          transform: translateX(7px);
+        }
+      }
+    </style>
+  </body>
+</html>

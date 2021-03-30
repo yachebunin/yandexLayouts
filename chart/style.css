@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+  color: #261C00;
+  font-family: 'Roboto';
+}
+
+#chart_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#title {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+#description {
+  margin-bottom: 33px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #BFBFBF;
+}
+
+#chart_list {
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.chart_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-width: 40px;
+}
+
+.chart_item:not(:last-child) {
+  margin-right: 24px;
+}
+
+#chart_list > .chart_item:nth-child(1) > .chart_item_column {
+  min-height: 72px;
+}
+
+#chart_list > .chart_item:nth-child(2) > .chart_item_column {
+  min-height: 98px;
+}
+
+#chart_list > .chart_item:nth-child(3) > .chart_item_column {
+  min-height: 82px;
+}
+
+#chart_list > .chart_item:nth-child(4) > .chart_item_column {
+  min-height: 105px;
+}
+
+#chart_list > .chart_item:nth-child(5) > .chart_item_column {
+  min-height: 76px;
+}
+
+#chart_list > .chart_item:nth-child(6) > .chart_item_column {
+  min-height: 90px;
+}
+
+#chart_list > .chart_item:nth-child(7) > .chart_item_column {
+  min-height: 117px;
+}
+
+.chart_item_score {
+  margin-bottom: 8px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #BFBFBF;
+}
+
+.chart_item_column {
+  min-height: 8px;
+  margin-bottom: 12px;
+  background: linear-gradient(180deg, rgba(244, 244, 244, 0.9) 0.82%, #E9E9E9 100%, rgba(234, 234, 234, 0) 100%);
+  box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.5), inset 0px 0px 20px rgba(207, 207, 207, 0.5);
+  border-radius: 6px;
+}
+
+.chart_item_number {
+  font-size: 16px;
+  font-weight: 500;
+  color: #BFBFBF;
+}
+
+.chart_item_max > .chart_item_score {
+  color: #261C00;
+}
+
+.chart_item_max > .chart_item_column {
+  background: linear-gradient(180deg, #FFF2D1 0.82%, #FFD66C 100%);
+  box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.5), inset 0px 0px 20px rgba(255, 176, 57, 0.8);
+}
+
+#leaders {
+  display: flex;
+}
+
+.leader {
+  width: 220px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.leader_info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.leader_image {
+  margin-right: 14px;
+}
+
+.leader_image > img {
+  border-radius: 100%;
+  width: 40px;
+}
+
+.leader_name {
+  font-weight: 500;
+  font-size: 16px;
+  color: #261C00;
+}
+
+.leader_score {
+  font-size: 14px;
+  color: #BFBFBF;
+}
+
+#border {
+  margin-left: 20px;
+  margin-right: 16px;
+  height: 40px;
+  width: 2px;
+  background: #BFBFBF;
+  opacity: 0.3;
+}
+
+@media all and (min-width: 320px) and (max-width: 568px) {
+  #chart_wrapper {
+    align-items: flex-start;
+    text-align: left;
+    padding: 12px;
+  }
+
+  #chart_list {
+    text-align: center;
+    overflow: scroll;
+    max-width: 100%;
+    transform: translateX(-20px);
+  }
+
+  #chart_list::-webkit-scrollbar { width: 0px; }
+
+  #leaders {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #border {
+    margin: 17px 0px;
+    width: 100%;
+    height: 2px;
+    background: #BFBFBF;
+    opacity: 0.3;
+  }
+
+  #chart_list > .chart_item:nth-child(1) > .chart_item_column {
+    min-height: 225px;
+  }
+  
+  #chart_list > .chart_item:nth-child(2) > .chart_item_column {
+    min-height: 251px;
+  }
+  
+  #chart_list > .chart_item:nth-child(3) > .chart_item_column {
+    min-height: 235px;
+  }
+  
+  #chart_list > .chart_item:nth-child(4) > .chart_item_column {
+    min-height: 258px;
+  }
+  
+  #chart_list > .chart_item:nth-child(5) > .chart_item_column {
+    min-height: 229px;
+  }
+  
+  #chart_list > .chart_item:nth-child(6) > .chart_item_column {
+    min-height: 243px;
+  }
+  
+  #chart_list > .chart_item:nth-child(7) > .chart_item_column {
+    min-height: 270px;
+  }
+}

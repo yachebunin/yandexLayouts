@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>diagram</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-style@latest/dist/chartjs-plugin-style.min.js"></script>
+  </head>
+
+  <body>
+    <div id="diagram_wrapper">
+      <div id="title">Размер коммитов</div>
+      <div id="description">Спринт № 213</div>
+      <div id="diagram_list">
+        <div id="diagram_item_image">
+          <div id="diagram_item_image_text">
+            <div id="commits_value_all">182 коммита</div>
+            <div id="commits_value_new">+42 с прошлого спринта</div>
+          </div>
+          <canvas id="doughnut-chart" width="240" height="240"></canvas>
+        </div>
+        <div id="diagram_item_list">
+          <div class="values_list_item">
+            <div id="item_circle_1" class="item_circle"></div>
+            <div class="item_info">&gt; 1001 строки</div>
+            <div class="item_new_commits">+8</div>
+            <div class="item_all_commits">30</div>
+          </div>
+          <div class="values_list_item">
+            <div id="item_circle_2" class="item_circle"></div>
+            <div class="item_info">501 - 1000 строк</div>
+            <div class="item_new_commits">+6</div>
+            <div class="item_all_commits">32</div>
+          </div>
+          <div class="values_list_item">
+            <div id="item_circle_3" class="item_circle"></div>
+            <div class="item_info">101 - 500 строк</div>
+            <div class="item_new_commits">+16</div>
+            <div class="item_all_commits">58</div>
+          </div>
+          <div class="values_list_item">
+            <div id="item_circle_4" class="item_circle"></div>
+            <div class="item_info">1 - 100 строк</div>
+            <div class="item_new_commits">+12</div>
+            <div class="item_all_commits">62</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.addEventListener(
+        "load",
+        function () {
+          Math.radians = function (degrees) {
+            return (degrees * Math.PI) / 180;
+          };
+
+          let plotDoughnutChart = document
+            .querySelector("#doughnut-chart")
+            .getContext("2d");
+          plotDoughnutChart.height = 130;
+
+          const dataDoughnut = {
+            datasets: [
+              {
+                backgroundColor: ["#FFCC62", "#FFEABB", "#FAFAFA", "#E1E1E1"],
+                data: [98, 92, 78, 66],
+                hoverBorderColor: "transparent",
+                borderWidth: 4,
+              },
+            ],
+          };
+
+          const optionsDoughnut = {
+            animation: {
+              duration: 0,
+              animateScale: false,
+            },
+            cutoutPercentage: 70,
+            rotation: Math.radians(0),
+            legend: {
+              display: false,
+            },
+            tooltips: {
+              enabled: false,
+            },
+          };
+
+          const doughnutChart = new Chart(plotDoughnutChart, {
+            type: "doughnut",
+            data: dataDoughnut,
+            options: optionsDoughnut,
+          });
+        },
+        false
+      );
+    </script>
+  </body>
+</html>
